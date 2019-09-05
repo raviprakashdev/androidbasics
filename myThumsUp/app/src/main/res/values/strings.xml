@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">myThumsUp</string>
+    <string name="title">Thumb Up</string>
+    <string name="todo">TODO</string>
+</resources>

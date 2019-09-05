@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyAnimButton</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="blue">Blue</string>
+    <string name="button">Button</string>
+</resources>

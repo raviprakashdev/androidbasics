@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyReminderApp</string>
+    <string name="start">START</string>
+    <string name="timeleft">Time Left</string>
+    <string name="done">Not Done Yet !!!</string>
+    <string name="mtime">0</string>
+
+</resources>

@@ -14,42 +14,53 @@ import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
-    public class SetupFetch extends AsyncTask<String , void, String>{
+    public class SetupFetch extends AsyncTask<String, Void, String>{
 
         @Override
         protected String doInBackground(String... strings) {
 
             URL url;
-            String page= "";
+            String page = "";
             HttpURLConnection urlConnection = null;
 
 
-            try{
+            try {
                 url = new URL(strings[0]);
 
-                urlConnection= (HttpURLConnection) url.openConnection();
+                urlConnection = (HttpURLConnection) url.openConnection();
 
-                InputStream input = urlConnection.getErrorStream();
+                InputStream input = urlConnection.getInputStream();
 
-                InputStreamReader read=new InputStreamReader(input);
+                InputStreamReader read = new InputStreamReader(input);
+
 
                 int data = read.read();
 
-                while(data != -1){
-                    char storeData=(char) data;
+                while (data != -1){
+                    char storeData = (char) data;
                     page += storeData;
                     data = read.read();
                 }
                 return page;
+
+
             }
 
-            catch (Exception e){
+            catch(Exception e) {
                 e.printStackTrace();
-                return "cannot fetch web page";
+                return "Cannot fetch web page";
             }
-            
+
+
+
+
         }
     }
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,12 +70,18 @@ public class MainActivity extends AppCompatActivity {
 
         String page = null;
 
+
         try {
-            page=request.execute("https://www.stackoverflow.com").get();
+            page = request.execute("http://www.HiteshChoudhary.com/").get();
+            Log.i("DONE", "DONE");
+
         }
-        catch(Exception e){
+        catch (Exception e){
             e.printStackTrace();
         }
-        Log.i("Amazing stack over lofw",page);
+
+        Log.i("Stackoverflow", page);
+        Log.i("DONE", "DONE");
+
     }
 }
